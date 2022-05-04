@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+}
+
+.footer__image {
+  width: 118px;
+  padding: 50px 0;
+  @media screen and (min-width: $desktop) {
+    padding: 110px 0;
+  }
+}

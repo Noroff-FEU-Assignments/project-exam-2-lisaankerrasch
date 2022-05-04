@@ -1,0 +1,27 @@
+.section {
+  &__1 {
+    position: relative;
+  }
+  &__2 {
+    background-color: $colour-light;
+  }
+  &__3 {
+    background-color: $colour-main;
+  }
+  &__4 {
+    background-color: $colour-light;
+  }
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 80px;
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+}

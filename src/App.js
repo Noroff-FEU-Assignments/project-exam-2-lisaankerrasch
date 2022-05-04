@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./sass/styles.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/home/HomePage";
+import Nav from "./constants/Nav";
+import ContactPage from "./components/contact/ContactPage";
+import AccommodationPage from "./components/accommodation/AccommodationPage";
+import AccommodationDetail from "./components/accommodation/AccommodationDetail";
+import EnquirePage from "./components/enquiries/EnquirePage";
+import Footer from "./constants/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" exact element={<HomePage />}></Route>
+        <Route path="/contact" exact element={<ContactPage />}></Route>
+        <Route
+          path="/accommodation"
+          exact
+          element={<AccommodationPage />}
+        ></Route>
+        <Route path="/enquire" exact element={<EnquirePage />}></Route>
+        <Route
+          path="/accommodation/:id"
+          exact
+          element={<AccommodationDetail />}
+        ></Route>
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

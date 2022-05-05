@@ -1,15 +1,28 @@
-h1 {
-  font-family: $font-secondary;
-}
-
+h1,
 h2 {
   font-family: $font-secondary;
-  font-size: 45px;
+  font-size: 50px;
   color: $colour-dark;
   margin: 0 0 50px;
 }
+
+h3 {
+  font-family: $font-secondary;
+  font-size: 22px;
+}
+
 p {
-  font-size: 14px;
+  font-size: 20px;
+  color: $colour-dark;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .bold {

@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import frontImage from "../../images/holidaze8.jpg";
 import ulriken from "../../images/holidaze4.jpg";
-import bergenDark from "../../images/Bergen-dark2.svg";
+import bergenDark from "../../images/Bergen-dark.svg";
+import guesthouse from "../../images/holidaze6.jpg";
+import hotel from "../../images/holidaze10.jpg";
+import bnb from "../../images/holidaze9.jpg";
 
 export default function HomePage() {
   return (
@@ -90,6 +93,7 @@ export default function HomePage() {
             <div className="section__flex--2">
               <img
                 className="default__illustration"
+                style={{ width: "1100px", height: "auto" }}
                 src={bergenDark}
                 alt="Illustration of Bryggen"
               ></img>
@@ -98,7 +102,54 @@ export default function HomePage() {
         </div>
       </section>
       <section className="section section__4">
-        <div clasNames="container"></div>
+        <div className="container">
+          <h2>Accommodation for all shapes and sizes</h2>
+          <div className="section__flex">
+            <div className="flex__1">
+              <img
+                className="flex__image"
+                src={hotel}
+                alt="Illustration of Bryggen"
+              ></img>
+              <h3>Hotels</h3>
+              <p>
+                Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus.
+                Senectus et netus et malesuada fames ac. Pharetra magna ac
+                placerat vestibulum lectus mauris. Accumsan in nisl nisi
+                scelerisque. At volutpat diam ut venenatis.
+              </p>
+            </div>
+            <div className="flex__2">
+              {" "}
+              <img
+                className="flex__image"
+                src={bnb}
+                alt="Illustration of Bryggen"
+              ></img>{" "}
+              <h3>B&Bs</h3>
+              <p>
+                Accumsan in nisl nisi scelerisque. At volutpat diam ut
+                venenatis. Lectus quam id leo in vitae turpis massa sed. Nec
+                feugiat in fermentum posuere. Lorem ipsum dolor sit amet. Dictum
+                at tempor commodo ullamcorper a.
+              </p>
+            </div>
+            <div className="flex__3">
+              <img
+                className="flex__image"
+                src={guesthouse}
+                alt="Illustration of Bryggen"
+              ></img>
+              <h3>Guesthouses</h3>
+              <p>
+                Quis eleifend quam adipiscing vitae proin sagittis. Justo eget
+                magna fermentum iaculis eu non diam phasellus vestibulum. Id
+                aliquet lectus proin nibh nisl condimentum id venenatis.
+              </p>
+            </div>
+          </div>
+          <Link to="/accommodation">See all accommodation </Link>
+        </div>
       </section>
     </div>
   );

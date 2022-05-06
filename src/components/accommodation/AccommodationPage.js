@@ -1,5 +1,6 @@
 import React from "react";
 import frontImage from "../../images/holidaze5.jpg";
+import AccommodationList from "./AccommodationList";
 
 export default function HomePage() {
   return (
@@ -34,7 +35,9 @@ export default function HomePage() {
       </section>
       <section className="section accommodation__section__3">
         <div className="container">
-          <div className="accommodation__section__flex"></div>
+          <div className="accommodation__section__flex">
+            <AccommodationList />
+          </div>
         </div>
       </section>
     </div>

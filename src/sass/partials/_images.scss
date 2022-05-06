@@ -1,7 +1,10 @@
 .default__image {
   max-width: 100%;
   @media screen and (min-width: $desktop) {
-    max-width: 710px;
+    max-width: none;
+    width: 800px;
+    height: 450px;
+    object-fit: cover;
   }
 }
 

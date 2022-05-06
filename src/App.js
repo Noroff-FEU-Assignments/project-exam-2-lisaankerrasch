@@ -7,6 +7,7 @@ import Nav from "./constants/Nav";
 import AccommodationPage from "./components/accommodation/AccommodationPage";
 // import AccommodationDetail from "./components/accommodation/AccommodationDetail";
 // import EnquirePage from "./components/enquiries/EnquirePage";
+import ActivityPage from "./components/activities/ActivityPage";
 import Footer from "./constants/Footer";
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
           exact
           element={<AccommodationPage />}
         ></Route>
+        <Route path="/activities" exact element={<ActivityPage />}></Route>
+
         {/* <Route path="/contact" exact element={<ContactPage />}></Route>
         <Route path="/login" exact element={<LoginPage />}></Route>
   

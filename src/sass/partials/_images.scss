@@ -1,3 +1,13 @@
-.hotel_image {
-  width: 450px;
+.default__image {
+  max-width: 100%;
+  @media screen and (min-width: $desktop) {
+    max-width: 710px;
+  }
+}
+
+.default__illustration {
+  max-width: 100%;
+  @media screen and (min-width: $desktop) {
+    max-width: 1100px;
+  }
 }

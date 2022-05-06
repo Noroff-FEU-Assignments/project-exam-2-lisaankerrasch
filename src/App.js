@@ -12,10 +12,10 @@ import Footer from "./constants/Footer";
 function App() {
   return (
     <Router>
-      <Nav />
+      {/* <Nav /> */}
       <Routes>
         <Route path="/" exact element={<HomePage />}></Route>
-        <Route path="/contact" exact element={<ContactPage />}></Route>
+        {/* <Route path="/contact" exact element={<ContactPage />}></Route>
         <Route path="/login" exact element={<LoginPage />}></Route>
         <Route
           path="/accommodation"
@@ -27,9 +27,9 @@ function App() {
           path="/accommodation/:id"
           exact
           element={<AccommodationDetail />}
-        ></Route>
+        ></Route> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

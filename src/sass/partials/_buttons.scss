@@ -1,0 +1,36 @@
+.filter-buttons {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @media screen and (min-width: $desktop) {
+    padding-top: 75px;
+    flex-direction: row;
+  }
+  &__button {
+    width: 100%;
+    height: 40px;
+    background-color: $colour-dark;
+    color: $colour-light;
+    border: none;
+    border-radius: 10px;
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: lighter;
+    @media screen and (min-width: $desktop) {
+      width: 155px;
+      font-size: 20px;
+    }
+  }
+}
+
+.search-button {
+  width: 105px;
+  height: 40px;
+  background-color: $colour-dark;
+  color: $colour-light;
+  border: none;
+  border-radius: 10px;
+  font-family: $font-primary;
+  font-size: 16px;
+}

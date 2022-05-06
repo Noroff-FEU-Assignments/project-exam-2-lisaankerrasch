@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import frontImage from "../../images/holidaze8.jpg";
+import frontImage from "../../images/holidaze11.jpg";
 import ulriken from "../../images/holidaze4.jpg";
 import bergenDark from "../../images/Bergen-dark.svg";
 import guesthouse from "../../images/holidaze6.jpg";
@@ -10,7 +10,7 @@ import bnb from "../../images/holidaze9.jpg";
 export default function HomePage() {
   return (
     <div>
-      <section className="section section__1">
+      <section className="section index__section__1">
         <div className="container">
           <img
             className="container__image"
@@ -19,14 +19,14 @@ export default function HomePage() {
           ></img>
         </div>
       </section>
-      <section className="section section__2">
+      <section className="section index__section__2">
         <div className="container">
           <h2>Take in the spectacular view from Ulriken</h2>
-          <div className="section__flex">
-            <div className="section__flex--1">
+          <div className="index__section__flex">
+            <div className="index__section__flex--1">
               <img className="default__image" src={ulriken} alt="Ulriken"></img>
             </div>
-            <div className="section__flex--2">
+            <div className="index__section__flex--2">
               <p>
                 Sapien et ligula ullamcorper malesuada proin libero nunc
                 consequat interdum. Sit amet nisl purus in mollis nunc. Ac
@@ -64,11 +64,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section section__3">
+      <section className="section index__section__3">
         <div className="container">
           <h2>When it rains...</h2>
-          <div className="section__flex">
-            <div className="section__flex--1">
+          <div className="index__section__flex">
+            <div className="index__section__flex--1">
               <p className="bold">
                 Sit amet aliquam id diam maecenas ultricies. Elit at imperdiet
                 dui accumsan sit amet nulla facilisi morbi. Sollicitudin aliquam
@@ -90,7 +90,7 @@ export default function HomePage() {
                 Elementum curabitur vitae nunc sed velit dignissim sodales.
               </p>
             </div>
-            <div className="section__flex--2">
+            <div className="index__section__flex--2">
               <img
                 className="default__illustration"
                 style={{ width: "1100px", height: "auto" }}
@@ -101,10 +101,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section section__4">
+      <section className="section index__section__4">
         <div className="container">
           <h2>Accommodation for all shapes and sizes</h2>
-          <div className="section__flex">
+          <div className="index__section__flex">
             <div className="flex__1">
               <img
                 className="flex__image"

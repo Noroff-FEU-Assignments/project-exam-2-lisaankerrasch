@@ -1,0 +1,17 @@
+.search {
+  width: 100%;
+  height: 40px;
+  border: $colour-dark;
+  border-radius: 10px;
+  font-family: $font-primary;
+  @media screen and (min-width: $desktop) {
+    width: 485px;
+  }
+}
+
+.search-bar {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

@@ -1,9 +1,14 @@
 h1,
 h2 {
   font-family: $font-secondary;
-  font-size: 50px;
+  font-size: 22px;
   color: $colour-dark;
-  margin: 0 0 50px;
+  margin: 30px 0 30px;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 50px;
+    margin: 0 0 50px;
+  }
 }
 
 h3 {
@@ -12,17 +17,27 @@ h3 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 14px;
   color: $colour-dark;
   font-weight: lighter;
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+  }
 }
 
 a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  font-family: $font-secondary;
+  color: $colour-main-accent;
+  font-size: 16px;
+  @media screen and (min-width: $desktop) {
+    font-size: 22px;
+    text-decoration: none;
+  }
+  &:hover {
+    @media screen and(min-width: $desktop) {
+      text-decoration: underline;
+    }
+  }
 }
 
 .bold {

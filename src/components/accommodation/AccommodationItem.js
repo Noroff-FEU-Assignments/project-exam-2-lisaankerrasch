@@ -8,7 +8,7 @@ function AccommodationItem({ id, name, description, image }) {
       <h3>{name}</h3>
       <p>{description}</p>
 
-      <NavLink to={`detail/${id}`} className="accommodation__link">
+      <NavLink to={`details/${id}`} className="accommodation__link">
         Read More...
       </NavLink>
     </div>

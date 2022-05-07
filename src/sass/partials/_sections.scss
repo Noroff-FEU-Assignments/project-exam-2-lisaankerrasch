@@ -17,6 +17,7 @@
     @media screen and (min-width: $desktop) {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
       gap: 50px;
     }
   }
@@ -68,5 +69,33 @@
   }
   &__image {
     width: 100%;
+  }
+}
+
+.details__section {
+  &__1 {
+    background-color: $colour-dark;
+  }
+  &__2 {
+    background-color: $colour-light;
+  }
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 50px;
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+}
+
+.contact__section {
+  &__1 {
+    background-color: $colour-dark;
+    position: relative;
   }
 }

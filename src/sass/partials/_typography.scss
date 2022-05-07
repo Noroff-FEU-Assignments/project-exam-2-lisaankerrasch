@@ -10,6 +10,12 @@ h2 {
     font-size: 44px;
     padding: 100px 0 50px;
   }
+  &.form-header {
+    padding: 0 0 75px;
+    &--login {
+      padding: 0 0 30px;
+    }
+  }
 }
 
 h3 {

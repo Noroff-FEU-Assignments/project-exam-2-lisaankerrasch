@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 .filter-buttons {
   padding-top: 25px;
   display: flex;
@@ -33,4 +37,19 @@
   border-radius: 10px;
   font-family: $font-primary;
   font-size: 16px;
+}
+
+.enquiry-button,
+.contact-button,
+.login-button {
+  width: 300px;
+  height: 55px;
+  background-color: $colour-main;
+  border: none;
+  border-radius: 10px;
+  font-family: $font-primary;
+}
+
+.login-button {
+  width: 510px;
 }

@@ -4,7 +4,7 @@ import gondola from "../../images/holidaze12.jpg";
 import bryggen from "../../images/holidaze13.jpg";
 import seafood from "../../images/holidaze3.jpg";
 
-export default function HomePage() {
+export default function ActivityPage() {
   return (
     <div>
       <section className="section activity__section__1">

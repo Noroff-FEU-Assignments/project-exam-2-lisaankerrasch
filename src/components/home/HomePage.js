@@ -93,7 +93,6 @@ export default function HomePage() {
             <div className="index__section__flex--2">
               <img
                 className="default__illustration"
-                style={{ width: "1100px", height: "auto" }}
                 src={bergenDark}
                 alt="Illustration of Bryggen"
               ></img>

@@ -1,0 +1,24 @@
+.login {
+  width: 500px;
+  margin: 0 auto;
+  &__p {
+    padding: 0 0 30px;
+  }
+}
+
+.login__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+input.login-input,
+textarea.login-textarea {
+  width: 100%;
+}
+
+textarea.login-textarea {
+  height: 100%;
+}

@@ -1,1 +1,24 @@
+input,
+textarea {
+  height: 55px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  font-family: $font-primary;
+  font-size: 14px;
+  padding-left: 10px;
+}
 
+textarea {
+  padding-top: 10px;
+}
+
+span {
+  color: red;
+  position: relative;
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}

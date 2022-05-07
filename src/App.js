@@ -1,15 +1,15 @@
 import "./sass/styles.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/home/HomePage";
-import Nav from "./constants/Nav";
+import Nav from "./components/layout/Nav";
 import ContactPage from "./components/contact/ContactPage";
 import LoginPage from "./components/login/LoginPage";
 import AccommodationPage from "./components/accommodation/AccommodationPage";
 import AccommodationDetails from "./components/accommodation/AccommodationDetails";
-// import EnquirePage from "./components/enquiries/EnquirePage";
+import EnquirePage from "./components/enquiries/EnquirePage";
 import AdminPage from "./components/admin/AdminPage";
 import ActivityPage from "./components/activities/ActivityPage";
-import Footer from "./constants/Footer";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
         <Route path="/login" exact element={<LoginPage />}></Route>
         <Route path="/admin" exact element={<AdminPage />}></Route>
 
-        {/* <Route path="/enquire" exact element={<EnquirePage />}></Route> */}
+        <Route path="/enquire" exact element={<EnquirePage />}></Route>
       </Routes>
       <Footer />
     </Router>

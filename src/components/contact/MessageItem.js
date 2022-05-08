@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function MessageItem({ id, first_name, last_name, email, phone, message }) {
   return (
-    <div className="message__item">
+    <div className="admin__item">
       <p>
         Name: {first_name} {last_name}
       </p>

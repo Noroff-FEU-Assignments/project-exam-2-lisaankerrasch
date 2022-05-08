@@ -8,15 +8,19 @@ function EnquiryItem({
   departure_date,
   number_of_people,
   message,
+  accommodation_name,
+  email,
 }) {
   return (
-    <div className="enquiry__item">
+    <div className="admin__item">
+      <p>Accommodation name: {accommodation_name} </p>
+      <p>Email: {email}</p>
       <p>
         Name: {first_name} {last_name}
       </p>
       <p>Number of people: {number_of_people}</p>
-      <p>arrival date: {arrival_date}</p>
-      <p>departure date: {departure_date}</p>
+      <p>Arrival date: {arrival_date}</p>
+      <p>Departure date: {departure_date}</p>
       <p>Message: {message}</p>
     </div>
   );

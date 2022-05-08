@@ -36,13 +36,15 @@ function EnquiryList() {
   }
 
   return (
-    <div className="enquiry">
+    <div className="admin__flex">
       {enquiries.data.map(function (enquiry) {
         const { id, attributes } = enquiry;
         return (
           <EnquiryItem
             key={id}
             id={id}
+            accommodation_name={attributes.accommodation_name}
+            email={attributes.email}
             first_name={attributes.first_name}
             last_name={attributes.last_name}
             arrival_date={attributes.arrival_date}

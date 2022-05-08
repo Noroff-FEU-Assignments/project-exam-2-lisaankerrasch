@@ -36,7 +36,7 @@ function MessageList() {
   }
 
   return (
-    <div className="message">
+    <div className="admin__flex">
       {messages.data.map(function (message) {
         const { id, attributes } = message;
         return (

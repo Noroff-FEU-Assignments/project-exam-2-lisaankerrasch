@@ -1,11 +1,17 @@
 import React from "react";
 import AccommodationDetail from "./AccommodationDetail";
 import breakfast from "../../images/holidaze14.jpg";
+import Heading from "../layout/Heading";
 
 export default function AccommodationDetails() {
   return (
     <div>
       <section className="section activity__section__1">
+        <div className="overlay__frontpage">
+          <div className="overlay__frontpage--container">
+            <Heading content="Accommodation Details"></Heading>
+          </div>
+        </div>
         <div className="container">
           <img
             className="container__image"

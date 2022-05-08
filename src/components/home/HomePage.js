@@ -6,11 +6,18 @@ import bergenDark from "../../images/Bergen-dark.svg";
 import guesthouse from "../../images/holidaze6.jpg";
 import hotel from "../../images/holidaze10.jpg";
 import bnb from "../../images/holidaze9.jpg";
+import Heading from "../layout/Heading";
 
 export default function HomePage() {
   return (
     <div>
       <section className="section index__section__1">
+        <div className="overlay__frontpage">
+          <div className="overlay__frontpage--container">
+            <Heading content="Welcome to Bergen"></Heading>
+          </div>
+        </div>
+
         <div className="container">
           <img
             className="container__image"

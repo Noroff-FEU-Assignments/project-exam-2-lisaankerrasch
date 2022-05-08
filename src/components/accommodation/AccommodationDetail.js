@@ -56,7 +56,7 @@ function AccommodationDetail() {
 
   return (
     <div className="accommodation__detail__1">
-      <h1>{accommodation.data.attributes.name}</h1>
+      <h2>{accommodation.data.attributes.name}</h2>
       <div className="details__section__flex">
         <div className="details-section__flex--1">
           <img
@@ -87,7 +87,9 @@ function AccommodationDetail() {
             <p>{accommodation.data.attributes.breakfast}</p>
             <p>{accommodation.data.attributes.website}</p>
           </div>
-          <button className="enquiry-button">Make an enquiry</button>
+          <div className="enquiry-button">
+            <button className="enquiry-button">Make an enquiry</button>
+          </div>
         </div>
       </div>
     </div>

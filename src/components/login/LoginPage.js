@@ -15,7 +15,7 @@ export default function LoginPage() {
       </section>
       <section className="overlay">
         <div className="overlay__container login">
-          <h1 className="form-header--login">Log in</h1>
+          <h2 className="form-header--login">Log in</h2>
           <p>For admins of Holidaze only.</p>
           <p className="login__p">
             Use the username and password provided from your supervisor.{" "}

@@ -1,11 +1,20 @@
 import React from "react";
 import frontImage from "../../images/holidaze5.jpg";
 import AccommodationList from "./AccommodationList";
+import Heading from "../layout/Heading";
 
 export default function HomePage() {
   return (
     <div>
       <section className="section accommodation__section__1">
+        <div className="overlay__frontpage">
+          <div className="overlay__frontpage--container">
+            <Heading
+              content="Accommodation"
+              className="overlay__frontpage--heading"
+            ></Heading>
+          </div>
+        </div>
         <div className="container">
           <img
             className="container__image"
@@ -29,7 +38,9 @@ export default function HomePage() {
               name="search"
               placeholder="Type here..."
             ></input>
-            <button className="search-button">Search</button>
+            <div className="search-button">
+              <button className="search-button">Search</button>
+            </div>
           </div>
         </div>
       </section>

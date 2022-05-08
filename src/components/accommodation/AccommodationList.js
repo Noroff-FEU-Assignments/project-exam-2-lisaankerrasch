@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_URL } from "../../constants/api";
+import { BASE_URL, ACCOMMODATION } from "../../constants/api";
 import AccommodationItem from "./AccommodationItem";
 
 function AccommodationList() {
@@ -10,7 +10,7 @@ function AccommodationList() {
   useEffect(function () {
     async function fetchData() {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(BASE_URL + ACCOMMODATION);
 
         if (response.ok) {
           const json = await response.json();

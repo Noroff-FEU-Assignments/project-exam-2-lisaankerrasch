@@ -1,13 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import bergenWhite from "../images/Bergen-white.png";
+import bergenWhite from "../../images/Bergen-white.png";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="footer container">
       <div className="foooter__flex--1">
         <Link to="/login">
-          <p className="nav__link">Log in for admin tools</p>
+          <p id="admin" className="nav__link">
+            Log in for admin tools
+          </p>
         </Link>
       </div>
 
@@ -21,5 +22,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

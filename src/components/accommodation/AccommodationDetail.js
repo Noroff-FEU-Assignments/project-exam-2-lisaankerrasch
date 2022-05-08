@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { API_DETAIL_URL } from "../../constants/api";
+import { BASE_URL, ACCOMMODATION_DETAIL } from "../../constants/api";
 
 function AccommodationDetail() {
   const [accommodation, setAccommodation] = useState(null);
@@ -15,7 +15,7 @@ function AccommodationDetail() {
     history.push("/");
   }
 
-  const url = API_DETAIL_URL + id + "?populate=*";
+  const url = BASE_URL + ACCOMMODATION_DETAIL + id + "?populate=*";
   console.log(url);
 
   useEffect(

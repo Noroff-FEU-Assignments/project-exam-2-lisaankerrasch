@@ -6,7 +6,7 @@ import ContactPage from "./components/contact/ContactPage";
 import LoginPage from "./components/login/LoginPage";
 import AccommodationPage from "./components/accommodation/AccommodationPage";
 import AccommodationDetails from "./components/accommodation/AccommodationDetails";
-import EnquirePage from "./components/enquiries/EnquirePage";
+// import EnquirePage from "./components/enquiries/EnquirePage";
 import AdminPage from "./components/admin/AdminPage";
 import ActivityPage from "./components/activities/ActivityPage";
 import Footer from "./components/layout/Footer";
@@ -31,8 +31,7 @@ function App() {
         <Route path="/contact" exact element={<ContactPage />}></Route>
         <Route path="/login" exact element={<LoginPage />}></Route>
         <Route path="/admin" exact element={<AdminPage />}></Route>
-
-        <Route path="/enquire" exact element={<EnquirePage />}></Route>
+        {/* <Route path="/enquiries" exact element={<EnquirePage />}></Route> */}
       </Routes>
       <Footer />
     </Router>

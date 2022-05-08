@@ -8,11 +8,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 80px;
+    gap: 50px;
   }
 
   &__item {
     width: 100%;
+    margin-bottom: 30px;
     @media screen and (min-width: $desktop) {
       width: 360px;
     }

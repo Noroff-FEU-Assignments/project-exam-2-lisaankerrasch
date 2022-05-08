@@ -83,7 +83,9 @@ function ContactForm() {
           {errors.message && <span>{errors.message.message}</span>}
         </div>
       </div>
-      <button className="contact-button">Submit</button>
+      <div className="contact-button">
+        <button className="contact-button">Submit</button>
+      </div>
     </form>
   );
 }

@@ -5,6 +5,15 @@ h1 {
   text-align: center;
   margin: 0;
   line-height: 300px;
+  &.form-header {
+    text-align: left;
+    padding: 0 0 75px;
+    line-height: normal;
+    &--login {
+      padding: 0 0 30px;
+      line-height: normal;
+    }
+  }
 }
 
 h2 {
@@ -17,12 +26,6 @@ h2 {
   @media screen and (min-width: $desktop) {
     font-size: 40px;
     padding: 100px 0 50px;
-  }
-  &.form-header {
-    padding: 0 0 75px;
-    &--login {
-      padding: 0 0 30px;
-    }
   }
 }
 

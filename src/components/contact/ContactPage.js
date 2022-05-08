@@ -16,7 +16,7 @@ export default function ContactPage() {
       </section>
       <section className="overlay">
         <div className="overlay__container">
-          <h2 className="form-header">Contact us</h2>
+          <h1 className="form-header">Contact us</h1>
           <div className="contact__form">
             <ContactForm />
           </div>

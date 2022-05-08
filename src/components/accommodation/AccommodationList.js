@@ -46,6 +46,7 @@ function AccommodationList() {
             name={attributes.name}
             type={attributes.type}
             description={attributes.description}
+            short_description={attributes.short_description}
             price={attributes.price}
             nearby_facilities={attributes.nearby_facilities}
             breakfast={attributes.breakfast}

@@ -69,10 +69,11 @@ export default function LoginForm() {
           />
           {errors.password && <FormError>{errors.password.message}</FormError>}
         </div>
-        <button className="login-button">
-          {" "}
-          {submitting ? "Logging in..." : "Log in"}
-        </button>
+        <div className="login-button">
+          <button className="login-button">
+            {submitting ? "Logging in..." : "Log in"}
+          </button>
+        </div>
       </fieldset>
     </form>
   );

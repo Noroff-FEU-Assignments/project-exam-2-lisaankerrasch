@@ -1,8 +1,8 @@
 import React from "react";
+import AddEnquiry from "./AddEnquiry";
 import streettraffic from "../../images/holidaze2.jpg";
-import LoginForm from "./LoginForm";
 
-export default function LoginPage() {
+export default function EnquiryPage() {
   return (
     <div>
       <section className="section login__section__1">
@@ -16,14 +16,10 @@ export default function LoginPage() {
       </section>
       <section className="overlay">
         <div className="overlay__container login">
-          <h1 className="form-header--login">Log in</h1>
-          <p>For admins of Holidaze only.</p>
-          <p className="login__p">
-            Use the username and password provided from your supervisor.{" "}
-          </p>
+          <h1 className="form-header--login">Check availability</h1>
 
-          <div className="login__form">
-            <LoginForm />
+          <div className="enquiry__form">
+            <AddEnquiry />
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BASE_URL, ACCOMMODATION_DETAIL } from "../../constants/api";
+import { Link } from "react-router-dom";
 
 function AccommodationDetail() {
   const [accommodation, setAccommodation] = useState(null);
@@ -88,7 +89,10 @@ function AccommodationDetail() {
             <p>{accommodation.data.attributes.website}</p>
           </div>
           <div className="enquiry-button">
-            <button className="enquiry-button">Make an enquiry</button>
+            <Link to="/enquiries">
+              {" "}
+              <button className="enquiry-button">Make an enquiry</button>
+            </Link>
           </div>
         </div>
       </div>

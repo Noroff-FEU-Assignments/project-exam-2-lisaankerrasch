@@ -9,7 +9,7 @@ export default function AccommodationDetails() {
       <section className="section activity__section__1">
         <div className="overlay__frontpage">
           <div className="overlay__frontpage--container">
-            <Heading content="Accommodation Details"></Heading>
+            <Heading content="Details"></Heading>
           </div>
         </div>
         <div className="container">

@@ -10,10 +10,12 @@ import AccommodationDetails from "./components/accommodation/AccommodationDetail
 import AdminPage from "./components/admin/AdminPage";
 import ActivityPage from "./components/activities/ActivityPage";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./constants/utils/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Nav />
       <Routes>
         <Route path="/" exact element={<HomePage />}></Route>

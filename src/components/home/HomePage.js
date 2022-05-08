@@ -17,7 +17,6 @@ export default function HomePage() {
             <Heading content="Welcome to Bergen"></Heading>
           </div>
         </div>
-
         <div className="container">
           <img
             className="container__image"

@@ -1,5 +1,6 @@
 import React from "react";
 import activityImage from "../../images/holidaze7.jpg";
+import Heading from "../layout/Heading";
 import gondola from "../../images/holidaze12.jpg";
 import bryggen from "../../images/holidaze13.jpg";
 import seafood from "../../images/holidaze3.jpg";
@@ -8,6 +9,11 @@ export default function ActivityPage() {
   return (
     <div>
       <section className="section activity__section__1">
+        <div className="overlay__frontpage">
+          <div className="overlay__frontpage--container">
+            <Heading content="Things to do"></Heading>
+          </div>
+        </div>
         <div className="container">
           <img
             className="container__image"

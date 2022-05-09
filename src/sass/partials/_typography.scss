@@ -49,9 +49,10 @@ a {
   font-family: $font-secondary;
   color: $colour-main-accent;
   font-size: 16px;
+  text-decoration: none;
+
   @media screen and (min-width: $desktop) {
     font-size: 22px;
-    text-decoration: none;
   }
   &:hover {
     @media screen and(min-width: $desktop) {
@@ -62,4 +63,8 @@ a {
 
 .bold {
   font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline !important;
 }

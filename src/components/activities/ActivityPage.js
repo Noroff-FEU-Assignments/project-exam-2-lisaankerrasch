@@ -14,7 +14,7 @@ export default function ActivityPage() {
             <Heading content="Things to do"></Heading>
           </div>
         </div>
-        <div className="container">
+        <div className="container__frontimage">
           <img
             className="container__image"
             src={activityImage}

@@ -11,13 +11,13 @@ import Heading from "../layout/Heading";
 export default function HomePage() {
   return (
     <div>
-      <section className="section index__section__1">
+      <section className="section index__section index__section__1">
         <div className="overlay__frontpage">
           <div className="overlay__frontpage--container">
             <Heading content="Welcome to Bergen"></Heading>
           </div>
         </div>
-        <div className="container">
+        <div className="container__frontimage">
           <img
             className="container__image"
             src={frontImage}
@@ -25,7 +25,7 @@ export default function HomePage() {
           ></img>
         </div>
       </section>
-      <section className="section index__section__2">
+      <section className="section index__section index__section__2">
         <div className="container">
           <h2>Take in the spectacular view from Ulriken</h2>
           <div className="index__section__flex">
@@ -70,7 +70,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section index__section__3">
+      <section className="section index__section index__section__3">
         <div className="container">
           <h2>When it rains...</h2>
           <div className="index__section__flex">
@@ -106,7 +106,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section index__section__4">
+      <section className="section index__section index__section__4">
         <div className="container">
           <h2>Accommodation for all shapes and sizes</h2>
           <div className="index__section__flex">

@@ -10,9 +10,19 @@ body {
   @media screen and (min-width: $desktop) {
     padding-bottom: 100px;
   }
+  &__frontimage {
+    @media screen and (min-width: $tablet) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
   &__image {
     width: 100%;
-    height: 800px;
+    height: 150px;
+
+    @media screen and (min-width: $tablet) {
+      height: 800px;
+    }
     object-fit: cover;
     &--overlay {
       height: 900px;

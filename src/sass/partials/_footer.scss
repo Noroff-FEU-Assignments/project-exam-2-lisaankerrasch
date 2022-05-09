@@ -3,8 +3,9 @@
   flex-direction: column;
   margin: 50px auto 0;
   text-align: center;
+  padding-bottom: 40px;
   &__illustration {
-    width: 375px;
+    width: 60%;
     @media screen and (min-width: $desktop) {
       width: 400px;
     }

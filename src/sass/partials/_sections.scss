@@ -1,6 +1,12 @@
 .index__section {
+  padding-bottom: 40px;
   &__1 {
     background-color: $colour-dark;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 50px;
+    }
   }
   &__2 {
     background-color: $colour-light;
@@ -29,6 +35,11 @@
 .accommodation__section {
   &__1 {
     background-color: $colour-dark;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 50px;
+    }
   }
   &__2 {
     background-color: $colour-main;
@@ -54,6 +65,11 @@
 .activity__section {
   &__1 {
     background-color: $colour-dark;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 50px;
+    }
   }
   &__2 {
     background-color: $colour-light;

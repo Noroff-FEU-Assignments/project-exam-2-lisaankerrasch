@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer container">
       <div className="foooter__flex--1">
         <Link to="/login">
-          <p id="admin" className="nav__link">
+          <p id="admin" className="nav__link underline">
             Log in for admin tools
           </p>
         </Link>

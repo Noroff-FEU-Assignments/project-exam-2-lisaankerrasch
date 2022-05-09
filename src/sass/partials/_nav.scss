@@ -1,8 +1,18 @@
 .nav {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 30px 0;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
+  &__mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
   &__logo {
     font-family: $font-secondary;
     color: $colour-light;
@@ -21,11 +31,26 @@
   }
   &__links {
     display: flex;
-    width: 30%;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+    }
+  }
+
+  .active {
+    text-decoration: underline;
   }
 }
 
-.active {
-  text-decoration: underline;
+.hamburger-menu {
+  width: 40px;
+  position: absolute;
+  right: 0;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
 }

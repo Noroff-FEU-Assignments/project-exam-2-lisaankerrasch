@@ -2,10 +2,18 @@ import React from "react";
 import AddAccommodation from "../accommodation/AddAccommodation";
 import MessageList from "../contact/MessageList";
 import EnquiryList from "../enquiries/EnquiryList";
+import AuthContext from "../../context/AuthContext";
+import { useContext } from "react";
 
-function AdminPage() {
+export default function AdminPage() {
+  const [auth] = useContext(AuthContext);
+
+  if (auth === null) {
+    window.location.href = "/login";
+  }
+
   return (
-    <div>
+    <>
       <section className="section admin__section">
         <div className="container">
           <h2>Messages</h2>
@@ -16,8 +24,6 @@ function AdminPage() {
           <AddAccommodation />
         </div>
       </section>
-    </div>
+    </>
   );
 }
-
-export default AdminPage;

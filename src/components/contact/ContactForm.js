@@ -1,93 +1,130 @@
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import * as yup from "yup";
+import FormError from "../common/FormError";
+import useAxios from "../hooks/useAxios";
+import { BASE_URL, MESSAGE } from "../../constants/api";
+import FormSuccess from "../common/FormSuccess";
+import ServerError from "../common/ServerError";
 
-const schema = yup.object().shape({
-  firstname: yup
-    .string()
-    .required("Please enter your first name")
-    .min(3, "The first name must be at least 3 characters"),
-  lastname: yup
-    .string()
-    .required("Please enter your last name")
-    .min(4, "The first name must be at least 4 characters"),
-  phone: yup
-    .number()
-    .required("Please enter your phone number")
-    .min(6, "This is not a valid number!"),
-  email: yup
-    .string()
-    .required("Please enter an email address")
-    .email("Please enter a valid email address"),
-  message: yup
-    .string()
-    .required("Please enter your message")
-    .min(10, "The message must be at least 10 characters"),
-});
+const url = BASE_URL + MESSAGE;
 
-function ContactForm() {
+// const schema = yup.object().shape({
+//   first_name: yup
+//     .string()
+//     .required("Please enter your first name")
+//     .min(3, "The first name must be at least 3 characters"),
+// lastname: yup
+//   .string()
+//   .required("Please enter your last name")
+//   .min(4, "The first name must be at least 4 characters"),
+// phone: yup
+//   .number()
+//   .required("Please enter your phone number")
+//   .min(6, "This is not a valid number!"),
+// email: yup
+//   .string()
+//   .required("Please enter an email address")
+//   .email("Please enter a valid email address"),
+// message: yup
+//   .string()
+//   .required("Please enter your message")
+//   .min(10, "The message must be at least 10 characters"),
+// });
+
+export default function ContactForm() {
+  const [submitting, setSubmitting] = useState(false);
+  const [serverError, setServerError] = useState(null);
+  const [success, setSucccess] = useState(false);
+
+  const history = useNavigate();
+  const http = useAxios();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  } = useForm();
 
-  function onSubmit(data) {
-    console.log(data);
+  async function onSubmit(data) {
+    setSubmitting(true);
+    setServerError(null);
+    setSucccess(null);
+
+    data.status = "publish";
+
+    try {
+      const response = await http.post(url, data);
+      console.log("response", response.data);
+      history("/contact");
+      setSucccess(true);
+    } catch (error) {
+      console.log("error", error);
+      setServerError(error.toString());
+    } finally {
+      setSubmitting(false);
+    }
   }
-
-  console.log(errors);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      {success && <FormSuccess>Your message is sent!</FormSuccess>}
+
+      {serverError && (
+        <ServerError>Something went wrong. Please try again.</ServerError>
+      )}
+
       <div className="contact__flex">
         <div className="contact__flex--1">
           <div className="contact__flex--1-1">
             <input
+              name="first_name"
               placeholder="First name"
               className="contact-input"
-              {...register("firstname")}
+              {...register("data.first_name")}
             />
-            {errors.firstname && <span>{errors.firstname.message}</span>}
+            {errors.first_name && (
+              <FormError>{errors.first_name.message}</FormError>
+            )}
 
             <input
               placeholder="Last name"
               className="contact-input"
-              {...register("lastname")}
+              {...register("data.last_name")}
             />
-            {errors.lastname && <span>{errors.lastname.message}</span>}
+            {errors.lastname && (
+              <FormError>{errors.lastname.message}</FormError>
+            )}
           </div>
-
           <input
             placeholder="Phone number"
             className="contact-input"
-            {...register("phone")}
+            {...register("data.phone")}
           />
-          {errors.phone && <span>{errors.phone.message}</span>}
-
+          {errors.first_name && <FormError>{errors.phone.message}</FormError>}
           <input
             placeholder="Email"
             className="contact-input"
-            {...register("email")}
+            {...register("data.email")}
           />
-          {errors.email && <span>{errors.email.message}</span>}
+          {errors.first_name && <FormError>{errors.email.message}</FormError>}{" "}
         </div>
         <div className="contact__flex--2">
           <textarea
             placeholder="Message"
             className="contact-textarea"
-            {...register("message")}
+            {...register("data.message")}
           />
-          {errors.message && <span>{errors.message.message}</span>}
+          {errors.first_name && <FormError>{errors.message.message}</FormError>}{" "}
         </div>
       </div>
       <div className="contact-button">
-        <button className="contact-button">Submit</button>
+        <button className="contact-button">
+          {submitting ? "Sending message..." : "Send message"}
+        </button>
       </div>
     </form>
   );
 }
-
-export default ContactForm;

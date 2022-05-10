@@ -6,17 +6,20 @@ import Heading from "../layout/Heading";
 export default function AccommodationDetails() {
   return (
     <div>
-      <section className="section activity__section__1">
+      <section className="section accommodation__section__1">
         <div className="overlay__frontpage">
           <div className="overlay__frontpage--container">
-            <Heading content="Details"></Heading>
+            <Heading
+              content="Details"
+              className="overlay__frontpage--heading"
+            ></Heading>
           </div>
         </div>
-        <div className="container">
+        <div className="container__frontimage">
           <img
             className="container__image"
             src={breakfast}
-            alt="breakfast"
+            alt="Breakfast"
           ></img>
         </div>
       </section>

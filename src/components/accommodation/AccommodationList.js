@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BASE_URL, ACCOMMODATION } from "../../constants/api";
 import AccommodationItem from "./AccommodationItem";
 
-function AccommodationList() {
+export default function AccommodationList() {
   const [accommodations, setAccommodations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -36,28 +36,29 @@ function AccommodationList() {
   }
 
   return (
-    <div className="accommodation">
-      {accommodations.data.map(function (accommodation) {
-        const { id, attributes } = accommodation;
-        return (
-          <AccommodationItem
-            key={id}
-            id={id}
-            name={attributes.name}
-            type={attributes.type}
-            description={attributes.description}
-            short_description={attributes.short_description}
-            price={attributes.price}
-            nearby_facilities={attributes.nearby_facilities}
-            breakfast={attributes.breakfast}
-            number_of_people={attributes.number_of_people}
-            website={attributes.website}
-            image={attributes.image.data.attributes.formats.large.url}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="accommodation">
+        {accommodations.data.map(function (data) {
+          const { id, attributes } = data;
+
+          return (
+            <AccommodationItem
+              key={id}
+              id={id}
+              name={attributes.name}
+              type={attributes.type}
+              description={attributes.description}
+              short_description={attributes.short_description}
+              price={attributes.price}
+              nearby_facilities={attributes.nearby_facilities}
+              breakfast={attributes.breakfast}
+              number_of_people={attributes.number_of_people}
+              website={attributes.website}
+              image={attributes.image_url}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }
-
-export default AccommodationList;

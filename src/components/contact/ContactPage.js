@@ -8,7 +8,7 @@ export default function ContactPage() {
       <section className="section contact__section__1">
         <div className="container">
           <img
-            className="container__image container__image--overlay"
+            className="container__image container__image--overlay--contact"
             src={streettraffic}
             alt="Rainy street"
           ></img>

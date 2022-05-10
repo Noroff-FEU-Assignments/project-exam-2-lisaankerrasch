@@ -11,31 +11,35 @@ import AdminPage from "./components/admin/AdminPage";
 import ActivityPage from "./components/activities/ActivityPage";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./utils/ScrollToTop";
+import { AuthProvider } from "./context/AuthContext";
+
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Nav />
-      <Routes>
-        <Route path="/" exact element={<HomePage />}></Route>
-        <Route
-          path="/accommodation"
-          exact
-          element={<AccommodationPage />}
-        ></Route>
-        <Route path="/activities" exact element={<ActivityPage />}></Route>
-        <Route
-          path="/accommodation/details/:id"
-          exact
-          element={<AccommodationDetails />}
-        ></Route>
-        <Route path="/contact" exact element={<ContactPage />}></Route>
-        <Route path="/login" exact element={<LoginPage />}></Route>
-        <Route path="/admin" exact element={<AdminPage />}></Route>
-        <Route path="/enquiries" exact element={<EnquiryPage />}></Route>
-      </Routes>
-      <Footer />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ScrollToTop />
+        <Nav />
+        <Routes>
+          <Route path="/" exact element={<HomePage />}></Route>
+          <Route
+            path="/accommodation"
+            exact
+            element={<AccommodationPage />}
+          ></Route>
+          <Route path="/activities" exact element={<ActivityPage />}></Route>
+          <Route
+            path="/accommodation/details/:id"
+            exact
+            element={<AccommodationDetails />}
+          ></Route>
+          <Route path="/contact" exact element={<ContactPage />}></Route>
+          <Route path="/login" exact element={<LoginPage />}></Route>
+          <Route path="/admin" exact element={<AdminPage />}></Route>
+          <Route path="/enquiries/:id" exact element={<EnquiryPage />}></Route>
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 }
 

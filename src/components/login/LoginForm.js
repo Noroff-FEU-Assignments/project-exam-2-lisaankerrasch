@@ -35,10 +35,9 @@ export default function LoginForm() {
     setSubmitting(true);
     setLoginError(null);
 
-    console.log(data);
     try {
       const response = await axios.post(url, data);
-      console.log("response", response.data);
+      // console.log("response", response.data);
       setAuth(response.data);
       history("/admin");
     } catch (error) {
@@ -59,7 +58,9 @@ export default function LoginForm() {
             className="login-input"
             {...register("identifier")}
           />
-          {errors.username && <FormError>{errors.username.message}</FormError>}
+          {errors.identifier && (
+            <FormError>{errors.identifier.message}</FormError>
+          )}
 
           <input
             placeholder="Password"

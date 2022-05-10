@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-function AccommodationItem({
+export default function AccommodationItem({
   id,
   name,
   short_description,
@@ -27,5 +27,3 @@ function AccommodationItem({
 AccommodationItem.propTypes = {
   id: PropTypes.number.isRequired,
 };
-
-export default AccommodationItem;

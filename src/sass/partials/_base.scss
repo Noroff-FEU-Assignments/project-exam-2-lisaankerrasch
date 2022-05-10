@@ -20,33 +20,51 @@ body {
   &__image {
     width: 100%;
     height: 150px;
-
-    @media screen and (min-width: $tablet) {
+    object-fit: cover;
+    @media screen and (min-width: 1000px) {
       height: 800px;
     }
-    object-fit: cover;
-    &--overlay {
+    &--overlay--login {
+      height: 700px;
+      @media screen and (min-width: $tablet) {
+        height: 900px;
+      }
+    }
+    &--overlay--contact {
+      height: 800px;
+      @media screen and (min-width: $tablet) {
+        height: 900px;
+      }
+    }
+    &--overlay--enquiry {
       height: 900px;
+      @media screen and (min-width: $tablet) {
+        height: 1000px;
+      }
     }
   }
 }
 
 .overlay {
-  display: none;
-  @media screen and (min-width: $desktop) {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 300px;
+  top: 150px;
+  left: 50%;
+  margin-left: -150px;
+  @media screen and (min-width: 1000px) {
     display: block;
     position: absolute;
     top: 165px;
     left: 50%;
-    margin-left: -600px;
-    width: 1200px;
+    margin-left: -500px;
+    width: 1000px;
     height: 750px;
-    background-color: rgba(255, 255, 255, 0.9);
   }
 }
 
 .overlay__container {
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: 1000px) {
     padding: 90px;
   }
 }
@@ -62,7 +80,7 @@ body {
   width: 300px;
   height: 100px;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 1000px) {
     top: 300px;
     left: 50%;
     margin-left: -300px;

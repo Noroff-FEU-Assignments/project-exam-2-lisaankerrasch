@@ -50,19 +50,36 @@ button {
 
 .enquiry-button,
 .contact-button,
-.login-button {
-  width: 300px;
+.login-button,
+.logout-button,
+.accommodation-button {
+  width: 250px;
   height: 55px;
+  margin: 0 auto 30px;
   :hover {
     background-color: $colour-main-tint;
   }
   background-color: $colour-main;
-
   border: none;
   border-radius: 10px;
   font-family: $font-primary;
+  @media screen and (min-width: 1000px) {
+    width: 300px;
+  }
+  &__2 {
+    margin: 0 0 40px;
+  }
 }
 
 .login-button {
-  width: 510px;
+  width: 250px;
+  margin-bottom: 30px;
+  @media screen and (min-width: 1000px) {
+    width: 510px;
+    margin-bottom: 0;
+  }
+}
+
+.accommodation-button {
+  margin: 0 0 30px;
 }

@@ -1,11 +1,13 @@
 .nav {
   z-index: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 30px 0;
   background-color: $colour-dark;
   @media screen and (min-width: $tablet) {
+    position: static;
     flex-direction: row;
     align-items: center;
   }

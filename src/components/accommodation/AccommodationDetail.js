@@ -17,7 +17,6 @@ function AccommodationDetail() {
   }
 
   const url = BASE_URL + ACCOMMODATION_DETAIL + id + "?populate=*";
-  console.log(url);
 
   useEffect(
     function () {
@@ -55,6 +54,7 @@ function AccommodationDetail() {
     return <div>An error occured: {error}</div>;
   }
 
+  console.log(accommodation.data.attributes.name);
   return (
     <div className="accommodation__detail__1">
       <h2>{accommodation.data.attributes.name}</h2>
@@ -88,10 +88,12 @@ function AccommodationDetail() {
             <p>{accommodation.data.attributes.breakfast}</p>
             <p>{accommodation.data.attributes.website}</p>
           </div>
-          <div className="enquiry-button">
-            <Link to="/enquiries">
+          <div className="enquiry-button enquiry-button__2">
+            <Link to={`/enquiries/${id}`}>
               {" "}
-              <button className="enquiry-button">Make an enquiry</button>
+              <button className="enquiry-button enquiry-button__2">
+                Make an enquiry
+              </button>
             </Link>
           </div>
         </div>

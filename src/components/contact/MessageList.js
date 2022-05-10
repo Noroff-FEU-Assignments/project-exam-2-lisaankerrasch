@@ -1,39 +1,40 @@
 import { useState, useEffect } from "react";
-import { BASE_URL, MESSAGE } from "../../constants/api";
-import MessageItem from "./MessageItem";
+import useAxios from "../hooks/useAxios";
+import MessageItem from "../contact/MessageItem";
+import { MESSAGE, BASE_URL } from "../../constants/api";
+import ServerError from "../common/ServerError";
 
-function MessageList() {
+const url = BASE_URL + MESSAGE;
+console.log(url);
+
+export default function AccommodationList() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(function () {
-    async function fetchData() {
-      try {
-        const response = await fetch(BASE_URL + MESSAGE);
+  const http = useAxios();
 
-        if (response.ok) {
-          const json = await response.json();
-          setMessages(json);
-        } else {
-          setError("Something happened :( ");
-        }
+  useEffect(function () {
+    async function getMessages() {
+      try {
+        const response = await http.get(url);
+        console.log("response", response);
+        setMessages(response.data);
       } catch (error) {
+        console.log(error);
         setError(error.toString());
       } finally {
         setLoading(false);
       }
     }
-    fetchData();
+
+    getMessages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) {
-    return <div className="loader"></div>;
-  }
+  if (loading) return <div className="loader"></div>;
 
-  if (error) {
-    return <div>An error occured: {error}</div>;
-  }
+  if (error) return <div>{ServerError}</div>;
 
   return (
     <div className="admin__flex">
@@ -54,5 +55,3 @@ function MessageList() {
     </div>
   );
 }
-
-export default MessageList;

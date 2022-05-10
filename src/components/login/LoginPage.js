@@ -1,5 +1,5 @@
 import React from "react";
-import streettraffic from "../../images/holidaze2.jpg";
+import rainymountain from "../../images/holidaze1.jpg";
 import LoginForm from "./LoginForm";
 
 export default function LoginPage() {
@@ -8,9 +8,9 @@ export default function LoginPage() {
       <section className="section login__section__1">
         <div className="container">
           <img
-            className="container__image container__image--overlay"
-            src={streettraffic}
-            alt="Rainy street"
+            className="container__image container__image--overlay--login"
+            src={rainymountain}
+            alt="Rainy mountain"
           ></img>
         </div>
       </section>

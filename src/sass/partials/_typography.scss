@@ -6,17 +6,27 @@ h1 {
   margin: 0;
   line-height: 100px;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 1000px) {
     line-height: 300px;
     font-size: 44px;
   }
   &.form-header {
-    text-align: left;
-    padding: 0 0 75px;
     line-height: normal;
+    padding: 20px;
+    @media screen and (min-width: 1000px) {
+      padding: 0 0 75px;
+    }
     &--login {
-      padding: 0 0 30px;
+      text-align: left;
+      @media screen and (min-width: 1000px) {
+        text-align: center;
+        padding: 20px 0 30px;
+        line-height: normal;
+      }
+    }
+    &--enquiry {
       line-height: normal;
+      padding-bottom: 20px;
     }
   }
 }
@@ -72,4 +82,8 @@ a {
 
 .underline {
   text-decoration: underline !important;
+}
+
+.light {
+  color: $colour-light;
 }

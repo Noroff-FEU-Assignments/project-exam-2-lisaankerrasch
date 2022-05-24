@@ -14,7 +14,7 @@ const form_accommodationName = "data.accommodation_name";
 // // console.log(typeof form_accommodationName);
 
 const schema = yup.object().shape({
-  accommodation_name: yup
+  form_accommodationName: yup
     .string()
     .required("Please enter the name of the accommodation you wish to stay at")
     .min(2, "The accommodation name must be at least 2 characters"),
@@ -64,10 +64,10 @@ export default function AddEnquiry() {
     register,
     handleSubmit,
     formState: { errors },
-    // } = useForm({
-    //   resolver: yupResolver(schema),
-    // });
-  } = useForm({});
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  // } = useForm({});
 
   async function onSubmit(accommodation) {
     setSubmitting(true);

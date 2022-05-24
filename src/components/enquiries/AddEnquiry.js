@@ -102,17 +102,17 @@ export default function AddEnquiry() {
       )}
 
       <fieldset disabled={submitting}>
-        {/* <div className="enquiry__flex"> */}
-        <input
-          name="accommodation_name"
-          defaultValue={""}
-          className="enquiry-input"
-          placeholder="Accommodation name (required)"
-          {...register(form_accommodationName, { required: true })}
-        />
-        {errors.accommodation_name && <span>This field is required</span>}
+        <div className="enquiry__flex">
+          <input
+            name="accommodation_name"
+            defaultValue={""}
+            className="enquiry-input"
+            placeholder="Accommodation name (required)"
+            {...register(form_accommodationName, { required: true })}
+          />
+          {errors.accommodation_name && <span>This field is required</span>}
 
-        {/* <div className="enquiry__flex--1">
+          <div className="enquiry__flex--1">
             <div>
               <input
                 placeholder="First name (required)"
@@ -180,7 +180,7 @@ export default function AddEnquiry() {
             className="enquiry-input"
             {...register("message")}
           />
-        </div> */}
+        </div>
         <div className="enquiry-button">
           <button className="enquiry-button">
             {submitting ? "Sending request" : "Send request"}

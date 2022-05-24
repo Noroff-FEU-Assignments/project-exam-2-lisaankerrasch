@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import useAxios from "../hooks/useAxios";
 import MessageItem from "../contact/MessageItem";
 import { MESSAGE, BASE_URL } from "../../constants/api";
-import ServerError from "../common/ServerError";
 
 const url = BASE_URL + MESSAGE;
-console.log(url);
 
-export default function AccommodationList() {
+export default function MessageList() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +20,7 @@ export default function AccommodationList() {
         setMessages(response.data);
       } catch (error) {
         console.log(error);
-        setError(error.toString());
+        setError("Could not load messages.");
       } finally {
         setLoading(false);
       }
@@ -32,9 +30,14 @@ export default function AccommodationList() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) return <div className="loader"></div>;
+  if (loading)
+    return (
+      <div className="container">
+        <div className="loader"></div>
+      </div>
+    );
 
-  if (error) return <div>{ServerError}</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <div className="admin__flex">

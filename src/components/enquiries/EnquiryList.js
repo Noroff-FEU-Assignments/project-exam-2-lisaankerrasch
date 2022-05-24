@@ -1,39 +1,43 @@
 import { useState, useEffect } from "react";
+import useAxios from "../hooks/useAxios";
 import { BASE_URL, ENQUIRY } from "../../constants/api";
 import EnquiryItem from "./EnquiryItem";
 
-function EnquiryList() {
+const url = BASE_URL + ENQUIRY;
+
+export default function EnquiryList() {
   const [enquiries, setEnquiries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(function () {
-    async function fetchData() {
-      try {
-        const response = await fetch(BASE_URL + ENQUIRY);
+  const http = useAxios();
 
-        if (response.ok) {
-          const json = await response.json();
-          setEnquiries(json);
-        } else {
-          setError("Something happened :( ");
-        }
+  useEffect(function () {
+    async function getEnquiries() {
+      try {
+        const response = await http.get(url);
+        console.log("response", response);
+        setEnquiries(response.data);
       } catch (error) {
-        setError(error.toString());
+        console.log(error);
+        setError("Could not load enquiries.");
       } finally {
         setLoading(false);
       }
     }
-    fetchData();
+
+    getEnquiries();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) {
-    return <div className="loader"></div>;
-  }
+  if (loading)
+    return (
+      <div className="container">
+        <div className="loader"></div>
+      </div>
+    );
 
-  if (error) {
-    return <div>An error occured: {error}</div>;
-  }
+  if (error) return <div>{error}</div>;
 
   return (
     <div className="admin__flex">
@@ -57,5 +61,3 @@ function EnquiryList() {
     </div>
   );
 }
-
-export default EnquiryList;

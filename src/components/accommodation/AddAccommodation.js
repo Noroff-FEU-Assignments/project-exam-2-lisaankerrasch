@@ -49,7 +49,7 @@ export default function AddAccommodation() {
     setServerError(null);
     setSucccess(null);
 
-    data.status = "published";
+    data.status = "publish";
 
     try {
       const response = await http.post(url, data);
@@ -74,7 +74,7 @@ export default function AddAccommodation() {
       )}
       {serverError && (
         <ServerError className="form-margin">
-          Something went wrong, not able to post accommodation.
+          Something went wrong, not able to add accommodation.
         </ServerError>
       )}
       <fieldset disabled={submitting}>
@@ -83,7 +83,7 @@ export default function AddAccommodation() {
             name="name"
             className="add-accommodation-input"
             placeholder="Accommodation name (required)"
-            {...register("name", { required: true })}
+            {...register("data.name", { required: true })}
           />
           {errors.name && (
             <span class="form-error">Accommodation name is required</span>

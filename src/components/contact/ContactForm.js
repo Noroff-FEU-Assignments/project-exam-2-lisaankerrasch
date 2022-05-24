@@ -4,10 +4,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import * as yup from "yup";
 import FormError from "../common/FormError";
-import useAxios from "../hooks/useAxios";
+// import useAxios from "../hooks/useAxios";
 import { BASE_URL, MESSAGE } from "../../constants/api";
 import FormSuccess from "../common/FormSuccess";
 import ServerError from "../common/ServerError";
+import axios from "axios";
 
 const url = BASE_URL + MESSAGE;
 
@@ -40,7 +41,6 @@ export default function ContactForm() {
   const [success, setSucccess] = useState(false);
 
   const history = useNavigate();
-  const http = useAxios();
 
   const {
     register,
@@ -56,7 +56,7 @@ export default function ContactForm() {
     data.status = "publish";
 
     try {
-      const response = await http.post(url, data);
+      const response = await axios.post(url, data);
       console.log("response", response.data);
       history("/contact");
       setSucccess(true);

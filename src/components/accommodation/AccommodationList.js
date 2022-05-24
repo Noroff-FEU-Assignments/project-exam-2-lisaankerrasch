@@ -28,7 +28,7 @@ export default function AccommodationList() {
   }, []);
 
   if (loading) {
-    return <div className="loader"></div>;
+    return <div className="loader loader__accommodation"></div>;
   }
 
   if (error) {

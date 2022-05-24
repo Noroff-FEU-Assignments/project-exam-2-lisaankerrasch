@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="footer__flex--1">
         {auth ? (
           <>
-            <p className="light"> Logged in as admin. </p>
+            <p className="light"> Logged in as {auth.user.username}. </p>
             <Link to="/admin">
               <p className="light bold">Go to admin page</p>
             </Link>

@@ -3,7 +3,7 @@ import AccommodationDetail from "./AccommodationDetail";
 import breakfast from "../../images/holidaze14.jpg";
 import Heading from "../layout/Heading";
 
-export default function AccommodationDetails() {
+export default function DetailPage() {
   return (
     <div>
       <section className="section accommodation__section__1">

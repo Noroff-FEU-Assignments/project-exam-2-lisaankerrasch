@@ -2,6 +2,7 @@
   &__flex {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 30px;
     @media screen and (min-width: $tablet) {
       flex-direction: row;

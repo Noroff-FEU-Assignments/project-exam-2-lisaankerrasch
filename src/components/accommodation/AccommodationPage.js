@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom";
 
 export default function AccommodationPage() {
   const [APIData, setAPIData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -14,6 +16,7 @@ export default function AccommodationPage() {
     axios
       .get(`https://lisa-holidaze.herokuapp.com/api/accommodations`)
       .then((response) => {
+        setLoading(false);
         setAPIData(response.data.data);
       });
   }, []);
@@ -33,21 +36,56 @@ export default function AccommodationPage() {
     }
   };
 
-  // const filterAccommodations = (filterValue) => {
-  //   setFilterInput(filterValue);
-  //   console.log(filterValue);
-  //   if (filterInput !== "") {
-  //     const filteredData = APIData.filter((accommodation) => {
-  //       return Object.values(accommodation.attributes.type)
-  //         .join("")
-  //         .toLowerCase()
-  //         .includes(filterInput.toLowerCase());
-  //     });
-  //     setFilteredResults(filteredData);
-  //   } else {
-  //     setFilteredResults(APIData);
-  //   }
-  // };
+  if (loading)
+    return (
+      <div>
+        <section className="section accommodation__section__1">
+          <div className="overlay__frontpage">
+            <div className="overlay__frontpage--container">
+              <Heading
+                content="Accommodation"
+                className="overlay__frontpage--heading"
+              ></Heading>
+            </div>
+          </div>
+          <div className="container__frontimage">
+            <img
+              className="container__image"
+              src={frontImage}
+              alt="Hotel Lobby"
+            ></img>
+          </div>
+        </section>
+        <section className="section accommodation__section__2">
+          <div className="container accommodation__section__flex">
+            <div className="filter-buttons">
+              <button className="filter-buttons__button" value="hotel">
+                Hotels
+              </button>
+              <button className="filter-buttons__button" value="guesthouse">
+                Guesthouses
+              </button>
+              <button className="filter-buttons__button" value="b&b">
+                B&Bs
+              </button>
+            </div>
+            <input
+              icon="search"
+              className="search"
+              type="search"
+              name="search"
+              placeholder="Type here to search..."
+              onChange={(event) => searchAccommodations(event.target.value)}
+            />{" "}
+          </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <div className="loader loader__accommodation"></div>
+          </div>
+        </section>
+      </div>
+    );
 
   return (
     <div>
@@ -104,10 +142,14 @@ export default function AccommodationPage() {
                         src={accommodation.attributes.image_url}
                         alt={accommodation.attributes.name}
                       />
-                      <h3>{accommodation.attributes.name}</h3>
-                      <p className="bold">{accommodation.attributes.type}</p>
+                      <h3 className="capitalize">
+                        {accommodation.attributes.name}
+                      </h3>
+                      <p className="bold capitalize">
+                        {accommodation.attributes.type}
+                      </p>
                       <p>{accommodation.attributes.short_description}</p>
-                      <p>
+                      <p className="capitalize">
                         Price per night: {accommodation.attributes.price} NOK
                       </p>
 
@@ -128,10 +170,16 @@ export default function AccommodationPage() {
                         src={accommodation.attributes.image_url}
                         alt={accommodation.attributes.name}
                       />
-                      <h3>{accommodation.attributes.name}</h3>
-                      <p className="bold">{accommodation.attributes.type}</p>
-                      <p>{accommodation.attributes.short_description}</p>
-                      <p>
+                      <h3 className="capitalize">
+                        {accommodation.attributes.name}
+                      </h3>
+                      <p className="bold capitalize">
+                        {accommodation.attributes.type}
+                      </p>
+                      <p className="capitalize">
+                        {accommodation.attributes.short_description}
+                      </p>
+                      <p className="capitalize">
                         Price per night: {accommodation.attributes.price} NOK
                       </p>
 

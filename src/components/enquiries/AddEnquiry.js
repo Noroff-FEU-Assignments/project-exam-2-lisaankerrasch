@@ -1,55 +1,47 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as yup from "yup";
-import FormError from "../common/FormError";
 import axios from "axios";
 import { BASE_URL, ENQUIRY } from "../../constants/api";
 import FormSuccess from "../common/FormSuccess";
 import ServerError from "../common/ServerError";
+import { useForm } from "react-hook-form";
+// import * as yup from "yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import FormError from "../common/FormError";
 
-const form_accommodationName = "data.accommodation_name";
-
-// // console.log(typeof form_accommodationName);
-
-const schema = yup.object().shape({
-  form_accommodationName: yup
-    .string()
-    .required("Please enter the name of the accommodation you wish to stay at")
-    .min(2, "The accommodation name must be at least 2 characters"),
-  // first_name: yup
-  //   .string()
-  //   .required("Please enter your last name")
-  //   .min(2, "Last name must be at least 2 characters"),
-  // last_name: yup
-  //   .string()
-  //   .required("Please enter your last name")
-  //   .min(2, "Last name must be at least 2 characters"),
-  // arrival_date: yup
-  //   .date()
-  //   .required("Please enter an arrival date")
-  //   .nullable()
-  //   .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
-  // departure_date: yup
-  //   .date()
-  //   .required("Please enter an arrival date")
-  //   .nullable()
-  //   .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
-  // phone: yup
-  //   .number()
-  //   .required("Please enter your phone number")
-  //   .min(6, "This is not a valid phone number!"),
-  // email: yup
-  //   .string()
-  //   .required("Please enter an email address")
-  //   .email("Please enter a valid email address"),
-  // number_of_people: yup
-  //   .number()
-  //   .required("Please provide number of guest")
-  //   .transform((value) => (isNaN(value) ? undefined : value))
-  //   .nullable(),
-});
+// const schema = yup.object().shape({
+//   first_name: yup
+//     .string()
+//     .required("Please enter your first name")
+//     .min(2, "Last name must be at least 2 characters"),
+// plast_name: yup
+//   .string()
+//   .required("Please enter your last name")
+//   .min(2, "Last name must be at least 2 characters"),
+// arrival_date: yup
+//   .date()
+//   .required("Please enter an arrival date")
+//   .nullable()
+//   .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
+// departure_date: yup
+//   .date()
+//   .required("Please enter an arrival date")
+//   .nullable()
+//   .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
+// phone: yup
+//   .number()
+//   .required("Please enter your phone number")
+//   .min(6, "This is not a valid phone number!"),
+// email: yup
+//   .string()
+//   .required("Please enter an email address")
+//   .email("Please enter a valid email address"),
+// number_of_people: yup
+//   .number()
+//   .required("Please provide number of guest")
+//   .transform((value) => (isNaN(value) ? undefined : value))
+//   .nullable(),
+// });
 
 export default function AddEnquiry() {
   const [submitting, setSubmitting] = useState(false);
@@ -60,14 +52,7 @@ export default function AddEnquiry() {
 
   const url = BASE_URL + ENQUIRY;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-  // } = useForm({});
+  const { register, handleSubmit } = useForm();
 
   async function onSubmit(accommodation) {
     setSubmitting(true);
@@ -75,6 +60,8 @@ export default function AddEnquiry() {
     setSucccess(null);
 
     accommodation.status = "publish";
+
+    console.log(accommodation);
 
     try {
       const response = await axios.post(url, accommodation);
@@ -98,87 +85,73 @@ export default function AddEnquiry() {
       )}
 
       {serverError && (
-        <ServerError>Something went wrong. Please try again.</ServerError>
+        <ServerError>Please fill out all required fields.</ServerError>
       )}
 
       <fieldset disabled={submitting}>
         <div className="enquiry__flex">
           <input
-            name="accommodation_name"
-            defaultValue={""}
+            name="data.accommodation_name"
             className="enquiry-input"
-            placeholder="Accommodation name (required)"
-            {...register(form_accommodationName, { required: true })}
+            placeholder="Accommodation name (Optional)"
+            {...register("data.accommodation_name")}
           />
-          {errors.accommodation_name && <span>This field is required</span>}
 
           <div className="enquiry__flex--1">
             <div>
               <input
+                name="first_name"
                 placeholder="First name (required)"
                 className="enquiry-input input-narrow"
-                {...register("first_name")}
+                {...register("data.first_name")}
               />
-              {errors.first_name && (
-                <FormError>{errors.first_name.message}</FormError>
-              )}
             </div>
             <div>
               <input
+                name="last_name"
                 placeholder="Last name (required)"
                 className="enquiry-input input-narrow"
-                {...register("last_name")}
+                {...register("data.last_name")}
               />
-              {errors.last_name && (
-                <FormError>{errors.last_name.message}</FormError>
-              )}
             </div>
           </div>
           <input
-            placeholder="Email"
+            name="email"
+            placeholder="Email (required)"
             className="enquiry-input"
-            {...register("email")}
+            {...register("data.email")}
           />
-          {errors.email && <FormError>{errors.email.message}</FormError>}
           <div className="enquiry__flex--2">
             <div>
               <input
+                name="arrival_date"
                 placeholder="Date of arrival"
                 type="date"
                 className="enquiry-input input-narrow"
-                {...register("arrival_date")}
+                {...register("data.arrival_date")}
               />
-              {errors.arrival_date && (
-                <FormError>{errors.arrival_date.message}</FormError>
-              )}
             </div>
             <div>
               <input
+                name="departure_date"
                 placeholder="Date of departure"
                 type="date"
                 className="enquiry-input input-narrow"
-                {...register("departure_date")}
+                {...register("data.departure_date")}
               />
-              {errors.departure_date && (
-                <FormError>{errors.departure_date.message}</FormError>
-              )}
             </div>
           </div>
           <input
-            placeholder="Number of people"
-            input
+            name="number_of_people"
+            placeholder="Number of people (required)"
             className="enquiry-input"
-            {...register("number_of_people")}
+            {...register("data.number_of_people")}
           />
-          {errors.number_of_people && (
-            <FormError>{errors.number_of_people.message}</FormError>
-          )}
-
           <input
+            name="Message"
             placeholder="Message (optional)"
-            input
             className="enquiry-input"
-            {...register("message")}
+            {...register("data.message")}
           />
         </div>
         <div className="enquiry-button">

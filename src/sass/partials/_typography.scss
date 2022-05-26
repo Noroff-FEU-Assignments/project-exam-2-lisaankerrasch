@@ -87,3 +87,7 @@ a {
 .light {
   color: $colour-light;
 }
+
+.capitalize::first-letter {
+  text-transform: capitalize;
+}

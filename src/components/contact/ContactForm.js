@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import * as yup from "yup";
-import FormError from "../common/FormError";
+// import FormError from "../common/FormError";
 // import useAxios from "../hooks/useAxios";
 import { BASE_URL, MESSAGE } from "../../constants/api";
 import FormSuccess from "../common/FormSuccess";
@@ -42,11 +42,7 @@ export default function ContactForm() {
 
   const history = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register } = useForm();
 
   async function onSubmit(data) {
     setSubmitting(true);
@@ -68,8 +64,15 @@ export default function ContactForm() {
     }
   }
 
+  function validateForm() {
+    if (document.contactForm.data.first_name.value === "") {
+      alert("Please provide your name!");
+      document.myForm.Name.focus();
+      return false;
+    }
+  }
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form name="contactForm" onSubmit={validateForm(onSubmit)}>
       {success && <FormSuccess>Your message is sent!</FormSuccess>}
 
       {serverError && (
@@ -80,36 +83,35 @@ export default function ContactForm() {
         <div className="contact__flex--1">
           <div className="contact__flex--1-1">
             <input
-              name="first_name"
+              name="fname"
               placeholder="First name"
               className="contact-input"
               {...register("data.first_name")}
             />
-            {errors.first_name && (
+            {/* {errors.first_name && (
               <FormError>{errors.first_name.message}</FormError>
-            )}
-
+            )}{" "} */}
             <input
               placeholder="Last name"
               className="contact-input"
               {...register("data.last_name")}
             />
-            {errors.lastname && (
+            {/* {errors.lastname && (
               <FormError>{errors.lastname.message}</FormError>
-            )}
+            )} */}
           </div>
           <input
             placeholder="Phone number"
             className="contact-input"
             {...register("data.phone")}
           />
-          {errors.first_name && <FormError>{errors.phone.message}</FormError>}
+          {/* {errors.first_name && <FormError>{errors.phone.message}</FormError>} */}
           <input
             placeholder="Email"
             className="contact-input"
             {...register("data.email")}
           />
-          {errors.first_name && <FormError>{errors.email.message}</FormError>}{" "}
+          {/* {errors.first_name && <FormError>{errors.email.message}</FormError>}{" "} */}
         </div>
         <div className="contact__flex--2">
           <textarea
@@ -117,7 +119,7 @@ export default function ContactForm() {
             className="contact-textarea"
             {...register("data.message")}
           />
-          {errors.first_name && <FormError>{errors.message.message}</FormError>}{" "}
+          {/* {errors.first_name && <FormError>{errors.message.message}</FormError>}{" "} */}
         </div>
       </div>
       <div className="contact-button">

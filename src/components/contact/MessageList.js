@@ -16,7 +16,6 @@ export default function MessageList() {
     async function getMessages() {
       try {
         const response = await http.get(url);
-        console.log("response", response);
         setMessages(response.data);
       } catch (error) {
         console.log(error);

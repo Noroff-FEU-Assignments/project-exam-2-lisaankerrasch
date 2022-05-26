@@ -103,7 +103,8 @@ body {
   animation: spin 1.3s infinite linear;
   transform: translateZ(0);
   &__accommodation {
-    margin: 100px auto;
+    margin: 200px auto;
+    background-color: $colour-light;
   }
 }
 

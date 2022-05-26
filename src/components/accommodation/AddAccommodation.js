@@ -41,7 +41,7 @@ export default function AddAccommodation() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   async function onSubmit(data) {
@@ -53,7 +53,7 @@ export default function AddAccommodation() {
 
     try {
       const response = await http.post(url, data);
-      console.log("response", response.data);
+      console.log(response.data);
       history("/admin");
       setSucccess(true);
     } catch (error) {
@@ -83,9 +83,9 @@ export default function AddAccommodation() {
             name="name"
             className="add-accommodation-input"
             placeholder="Accommodation name (required)"
-            {...register("data.name", { required: true })}
+            {...register("data.name")}
           />
-          {errors.name && (
+          {/* {errors.name && (
             <span class="form-error">Accommodation name is required</span>
           )}
           <input
@@ -164,7 +164,7 @@ export default function AddAccommodation() {
           />
           {errors.image_url && (
             <span class="form-error">Image URL is required</span>
-          )}{" "}
+          )}{" "} */}
         </div>
         <div className="accommodation-button">
           <button className="accommodation-button">

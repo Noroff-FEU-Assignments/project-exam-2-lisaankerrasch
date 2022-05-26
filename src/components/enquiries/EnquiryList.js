@@ -16,7 +16,6 @@ export default function EnquiryList() {
     async function getEnquiries() {
       try {
         const response = await http.get(url);
-        console.log("response", response);
         setEnquiries(response.data);
       } catch (error) {
         console.log(error);

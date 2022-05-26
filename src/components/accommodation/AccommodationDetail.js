@@ -26,7 +26,6 @@ function AccommodationDetail() {
 
           if (response.ok) {
             const json = await response.json();
-            console.log(json);
             setAccommodation(json);
           } else {
             setError("An error occured");
@@ -54,7 +53,6 @@ function AccommodationDetail() {
     return <div>An error occured: {error}</div>;
   }
 
-  console.log(accommodation.data.attributes.name);
   return (
     <div className="accommodation__detail__1">
       <h2>{accommodation.data.attributes.name}</h2>

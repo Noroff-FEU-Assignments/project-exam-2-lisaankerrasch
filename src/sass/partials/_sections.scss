@@ -114,7 +114,7 @@
 .details-section__flex--2 {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   gap: 30px;
   @media screen and (min-width: 1000px) {
     gap: 20px;

@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 export default function AccommodationPage() {
   const [APIData, setAPIData] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -18,6 +18,9 @@ export default function AccommodationPage() {
       .then((response) => {
         setLoading(false);
         setAPIData(response.data.data);
+      })
+      .catch((error) => {
+        setError(error.toString());
       });
   }, []);
 
@@ -58,21 +61,37 @@ export default function AccommodationPage() {
             ></img>
           </div>
         </section>
-        <section className="section accommodation__section__2">
-          <div className="container">
-            <input
-              icon="search"
-              className="search"
-              type="search"
-              name="search"
-              placeholder="Search for accommodation name or type"
-              onChange={(event) => searchAccommodations(event.target.value)}
-            />{" "}
+        <section className="accommodation__section__3 loader-container">
+          <div className="loader__accommodation"></div>
+        </section>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div>
+        <section className="section accommodation__section__1">
+          <div className="overlay__frontpage">
+            <div className="overlay__frontpage--container">
+              <Heading
+                content="Accommodation"
+                className="overlay__frontpage--heading"
+              ></Heading>
+            </div>
+          </div>
+          <div className="container__frontimage">
+            <img
+              className="container__image"
+              src={frontImage}
+              alt="Hotel Lobby"
+            ></img>
           </div>
         </section>
-        <section className="section">
+        <section className="accommodation__section__3">
           <div className="container">
-            <div className="loader loader__accommodation"></div>
+            <div className="container__error">
+              <p>An error occured. Please try again.</p>
+            </div>
           </div>
         </section>
       </div>

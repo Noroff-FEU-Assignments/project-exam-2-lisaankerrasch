@@ -25,10 +25,12 @@ export default function AccommodationPage() {
     setSearchInput(searchValue);
     if (searchInput !== "") {
       const filteredData = APIData.filter((accommodation) => {
-        return Object.values(accommodation.attributes.type)
-          .join("")
-          .toLowerCase()
-          .includes(searchInput.toLowerCase());
+        const name = Object.values(accommodation.attributes.name);
+        const type = Object.values(accommodation.attributes.type);
+        return (
+          type.join("").toLowerCase().includes(searchInput.toLowerCase()) ||
+          name.join("").toLowerCase().includes(searchInput.toLowerCase())
+        );
       });
       setFilteredResults(filteredData);
     } else {
@@ -57,24 +59,13 @@ export default function AccommodationPage() {
           </div>
         </section>
         <section className="section accommodation__section__2">
-          <div className="container accommodation__section__flex">
-            <div className="filter-buttons">
-              <button className="filter-buttons__button" value="hotel">
-                Hotels
-              </button>
-              <button className="filter-buttons__button" value="guesthouse">
-                Guesthouses
-              </button>
-              <button className="filter-buttons__button" value="b&b">
-                B&Bs
-              </button>
-            </div>
+          <div className="container">
             <input
               icon="search"
               className="search"
               type="search"
               name="search"
-              placeholder="Type here to search..."
+              placeholder="Search for accommodation name or type"
               onChange={(event) => searchAccommodations(event.target.value)}
             />{" "}
           </div>
@@ -107,24 +98,13 @@ export default function AccommodationPage() {
         </div>
       </section>
       <section className="section accommodation__section__2">
-        <div className="container accommodation__section__flex">
-          <div className="filter-buttons">
-            <button className="filter-buttons__button" value="hotel">
-              Hotels
-            </button>
-            <button className="filter-buttons__button" value="guesthouse">
-              Guesthouses
-            </button>
-            <button className="filter-buttons__button" value="b&b">
-              B&Bs
-            </button>
-          </div>
+        <div className="container">
           <input
             icon="search"
             className="search"
             type="search"
             name="search"
-            placeholder="Type here to search..."
+            placeholder="Search for accommodation name or type"
             onChange={(event) => searchAccommodations(event.target.value)}
           />{" "}
         </div>

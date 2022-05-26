@@ -37,7 +37,6 @@ export default function LoginForm() {
 
     try {
       const response = await axios.post(url, data);
-      console.log("response", response.data);
       setAuth(response.data);
       history("/admin");
     } catch (error) {
@@ -66,6 +65,7 @@ export default function LoginForm() {
             placeholder="Password"
             className="login-input"
             type="password"
+            autoComplete="on"
             {...register("password")}
           />
           {errors.password && <FormError>{errors.password.message}</FormError>}

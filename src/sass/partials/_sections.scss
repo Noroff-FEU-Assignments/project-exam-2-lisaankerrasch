@@ -1,5 +1,8 @@
 .index__section {
   padding-bottom: 40px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 100px;
+  }
   &__1 {
     background-color: $colour-dark;
     padding-bottom: 0;
@@ -46,16 +49,6 @@
   }
   &__3 {
     background-color: $colour-light;
-  }
-  &__flex {
-    display: flex;
-    flex-direction: column;
-    @media screen and (min-width: $desktop) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 90px;
-    }
   }
   &__image {
     width: 100%;

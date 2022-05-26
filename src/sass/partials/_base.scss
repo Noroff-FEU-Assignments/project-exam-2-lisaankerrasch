@@ -7,9 +7,6 @@ body {
   width: 90%;
   max-width: 1900px;
   margin: 0 auto;
-  @media screen and (min-width: $desktop) {
-    padding-bottom: 100px;
-  }
   &__frontimage {
     z-index: -1;
     @media screen and (min-width: $tablet) {

@@ -85,86 +85,60 @@ export default function AddAccommodation() {
             placeholder="Accommodation name (required)"
             {...register("data.name")}
           />
-          {/* {errors.name && (
-            <span class="form-error">Accommodation name is required</span>
-          )}
           <input
             name="type"
             className="add-accommodation-input"
             placeholder="Type (required)"
-            {...register("data.type", { required: true })}
+            {...register("data.type")}
           />
-          {errors.type && <span class="form-error">Type is required</span>}
           <input
             name="price"
             className="add-accommodation-input"
             placeholder="Price per night (required)"
-            {...register("data.price", { required: true })}
+            {...register("data.price")}
           />
-          {errors.price && <span class="form-error">Price is required</span>}{" "}
           <input
             name="nearby_facilities"
             className="add-accommodation-input"
             placeholder="Nearby facilities (required)"
             {...register("data.nearby_facilities")}
           />
-          {errors.nearby_facilities && (
-            <span class="form-error">Nearby facilities field is required</span>
-          )}{" "}
           <input
             name="breakfast"
             className="add-accommodation-input"
             placeholder="Breakfast (required)"
             {...register("data.breakfast")}
           />
-          {errors.breakfast && (
-            <span class="form-error">Breakfast field is required</span>
-          )}
           <input
             name="number_of_people"
             className="add-accommodation-input"
             placeholder="Maximum number of people (required)"
             {...register("data.number_of_people")}
           />
-          {errors.number_of_people && (
-            <span class="form-error">Maximum number of people is required</span>
-          )}{" "}
           <input
             name="website"
             className="add-accommodation-input"
             placeholder="Website (required)"
             {...register("data.website")}
           />
-          {errors.website && (
-            <span class="form-error">Website is required</span>
-          )}{" "}
           <input
             name="short_description"
             className="add-accommodation-input"
             placeholder="Short description (required)"
             {...register("data.short_description")}
           />
-          {errors.short_description && (
-            <span class="form-error">Short description is required</span>
-          )}{" "}
           <input
             name="description"
             className="add-accommodation-input"
             placeholder="Long description (required)"
             {...register("data.description")}
           />
-          {errors.description && (
-            <span class="form-error">Long description type is required</span>
-          )}{" "}
           <input
             name="image"
             className="add-accommodation-input"
             placeholder="Image URL (required)"
             {...register("data.image_url")}
           />
-          {errors.image_url && (
-            <span class="form-error">Image URL is required</span>
-          )}{" "} */}
         </div>
         <div className="accommodation-button">
           <button className="accommodation-button">

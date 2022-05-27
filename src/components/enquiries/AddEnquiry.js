@@ -86,6 +86,7 @@ export default function AddEnquiry() {
           />
           <div className="enquiry__flex--2">
             <div>
+              <p className="date-paragraph"> Arrival date:</p>
               <input
                 name="arrival_date"
                 placeholder="Date of arrival"
@@ -95,6 +96,7 @@ export default function AddEnquiry() {
               />
             </div>
             <div>
+              <p className="date-paragraph"> Departure date:</p>
               <input
                 name="departure_date"
                 placeholder="Date of departure"

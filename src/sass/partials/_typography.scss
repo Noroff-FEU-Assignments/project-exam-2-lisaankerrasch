@@ -60,6 +60,12 @@ p {
   }
 }
 
+p.date-paragraph {
+  font-weight: bold;
+  font-size: 14px;
+  color: $colour-dark;
+}
+
 a {
   font-family: $font-secondary;
   color: $colour-main-accent;

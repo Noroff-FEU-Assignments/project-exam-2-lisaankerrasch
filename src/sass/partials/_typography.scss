@@ -54,7 +54,7 @@ p {
   font-family: $font-primary;
   font-size: 14px;
   color: $colour-dark;
-  font-weight: lighter;
+  font-weight: 300;
   @media screen and (min-width: $desktop) {
     font-size: 20px;
   }

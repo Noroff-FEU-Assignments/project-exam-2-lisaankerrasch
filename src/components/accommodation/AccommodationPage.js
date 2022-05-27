@@ -136,11 +136,13 @@ export default function AccommodationPage() {
               ? filteredResults.map((accommodation) => {
                   return (
                     <div key={accommodation.id} className="accommodation__item">
-                      <img
-                        className="accommodation__image"
-                        src={accommodation.attributes.image_url}
-                        alt={accommodation.attributes.name}
-                      />
+                      <NavLink to={`details/${accommodation.id}`}>
+                        <img
+                          className="accommodation__image"
+                          src={accommodation.attributes.image_url}
+                          alt={accommodation.attributes.name}
+                        />
+                      </NavLink>
                       <h3 className="capitalize">
                         {accommodation.attributes.name}
                       </h3>
@@ -164,11 +166,13 @@ export default function AccommodationPage() {
               : APIData.map((accommodation) => {
                   return (
                     <div key={accommodation.id} className="accommodation__item">
-                      <img
-                        className="accommodation__image"
-                        src={accommodation.attributes.image_url}
-                        alt={accommodation.attributes.name}
-                      />
+                      <NavLink to={`details/${accommodation.id}`}>
+                        <img
+                          className="accommodation__image"
+                          src={accommodation.attributes.image_url}
+                          alt={accommodation.attributes.name}
+                        />
+                      </NavLink>
                       <h3 className="capitalize">
                         {accommodation.attributes.name}
                       </h3>

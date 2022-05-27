@@ -5,43 +5,6 @@ import { BASE_URL, ENQUIRY } from "../../constants/api";
 import FormSuccess from "../common/FormSuccess";
 import ServerError from "../common/ServerError";
 import { useForm } from "react-hook-form";
-// import * as yup from "yup";
-// import { yupResolver } from "@hookform/resolvers/yup";
-// import FormError from "../common/FormError";
-
-// const schema = yup.object().shape({
-//   first_name: yup
-//     .string()
-//     .required("Please enter your first name")
-//     .min(2, "Last name must be at least 2 characters"),
-// plast_name: yup
-//   .string()
-//   .required("Please enter your last name")
-//   .min(2, "Last name must be at least 2 characters"),
-// arrival_date: yup
-//   .date()
-//   .required("Please enter an arrival date")
-//   .nullable()
-//   .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
-// departure_date: yup
-//   .date()
-//   .required("Please enter an arrival date")
-//   .nullable()
-//   .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
-// phone: yup
-//   .number()
-//   .required("Please enter your phone number")
-//   .min(6, "This is not a valid phone number!"),
-// email: yup
-//   .string()
-//   .required("Please enter an email address")
-//   .email("Please enter a valid email address"),
-// number_of_people: yup
-//   .number()
-//   .required("Please provide number of guest")
-//   .transform((value) => (isNaN(value) ? undefined : value))
-//   .nullable(),
-// });
 
 export default function AddEnquiry() {
   const [submitting, setSubmitting] = useState(false);
@@ -59,9 +22,9 @@ export default function AddEnquiry() {
     setServerError(null);
     setSucccess(null);
 
-    accommodation.status = "publish";
-
     console.log(accommodation);
+
+    accommodation.status = "publish";
 
     try {
       const response = await axios.post(url, accommodation);

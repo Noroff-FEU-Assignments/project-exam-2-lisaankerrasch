@@ -1,34 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import * as yup from "yup";
-// import { yupResolver } from "@hookform/resolvers/yup";
 import useAxios from "../hooks/useAxios";
 import { BASE_URL, ACCOMMODATION } from "../../constants/api";
 import FormSuccess from "../common/FormSuccess";
 import ServerError from "../common/ServerError";
 
 const url = BASE_URL + ACCOMMODATION;
-
-// const schema = yup.object().shape({
-//   name: yup.string().required("Accommodation name is required"),
-//   type: yup.string().required("Type is required"),
-//   price: yup
-//     .number()
-//     .typeError("Must be a number!")
-//     .required("price is required"),
-//   number_of_people: yup
-//     .number()
-//     .typeError("Must be a number!")
-//     .required("Number of people field is required"),
-//   nearby_facilities: yup
-//     .string()
-//     .required("Nearby facilities field is required"),
-//   breakfast: yup.string().required("Breakfast field is required"),
-//   website: yup.string().required("website is required"),
-//   short_description: yup.string().required("Short description is required"),
-//   description: yup.string().required("Description is required"),
-// });
 
 export default function AddAccommodation() {
   const [submitting, setSubmitting] = useState(false);
@@ -38,11 +16,7 @@ export default function AddAccommodation() {
   const history = useNavigate();
   const http = useAxios();
 
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   async function onSubmit(data) {
     setSubmitting(true);

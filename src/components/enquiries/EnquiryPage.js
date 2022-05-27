@@ -1,6 +1,7 @@
 import React from "react";
-import AddEnquiry from "./AddEnquiry";
+// import AddEnquiry from "./AddEnquiry";
 import blueroom from "../../images/holidaze6.jpg";
+import AddEnquiry from "./AddEnquiry";
 
 export default function EnquiryPage() {
   return (

@@ -4,7 +4,7 @@ password: Pass1234
 
 # Project Exam 2 
 
-![Ephemere](images/ephemere-details.jpg)
+![Project Exam](images/pe2.jpg)
 
 An accessory webshop with hats, sunglasses, shoes and jewellery. 
 

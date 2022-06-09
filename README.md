@@ -6,7 +6,7 @@ password: Pass1234
 
 ![Project Exam](images/pe2.jpg)
 
-An accessory webshop with hats, sunglasses, shoes and jewellery. 
+A website for accommodation booking in Bergen, Norway. 
 
 ## Brief
 
@@ -27,7 +27,8 @@ The website must be responsive on all devices.
 Functionalities include: 
 
 - Login function
-- Create, update and delete products
+- Create messages and enquiries 
+- Create accommodations for admins 
 - Search accommodations 
 
 ## Built With

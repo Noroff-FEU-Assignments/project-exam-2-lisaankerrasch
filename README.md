@@ -10,26 +10,23 @@ A website for accommodation booking in Bergen, Norway.
 
 ## Brief
 
-You are to build an e-commerce website. You can choose the theme of your website. It should follow the site architecture described below.
+A local tourism agency in Bergen is launching a new website called ‘Holidaze’ for visitors to the area to be able to find hotels, B&Bs and guesthouses, and for the accommodation owners to receive enquiries.
 
-Design your website using your favourite tool. You will need to find a suitable logo. If you decide to create a logo yourself, do not spend too much time on it.
+The project requires you to create the visitor side of the website where users can search accommodation and make enquiries, as well as the administration side where properties can be added and enquiries managed.
 
-You must apply all that you have learned in your studies so far. The site must have a good user experience and UI design, following today’s trends and design patterns.
-
-Build a frontend with home, product list, product detail and cart pages.
-
-Build admin pages to create, update and delete products.
-
-The website must be responsive on all devices.
+You will need to create an API to store the data for the establishments, enquiries and contact submissions. You can choose to use WordPress or Strapi as a Headless CMS, but it is very important that the API is deployed and publicly available. Please do not submit any files for your API. Only submit the website you have created.
 
 ## Functionalities
 
 Functionalities include: 
 
+
+- Public API  
 - Login function
 - Create messages and enquiries 
 - Create accommodations for admins 
-- Search accommodations 
+- Search accommodations
+
 
 ## Built With
 

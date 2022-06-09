@@ -4,7 +4,7 @@ password: Pass1234
 
 # Project Exam 2 
 
-![Project Exam](images/pe2.jpg)
+![Project Exam](../images/pe2.jpg)
 
 A website for accommodation booking in Bergen, Norway. 
 

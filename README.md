@@ -43,7 +43,7 @@ Functionalities include:
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:/lisaankerrasch/semesterproject2.git
+git clone git@github.com:Noroff-FEU-Assignments/project-exam-2-lisaankerrasch.git
 ```
 
 2. Install the dependencies:

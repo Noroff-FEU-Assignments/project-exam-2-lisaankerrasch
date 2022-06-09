@@ -32,9 +32,10 @@ Functionalities include:
 
 
 - [React.js](https://reactjs.org/)
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://www.npmjs.com/package/yup)
 - [Sass](https://sass-lang.com/)
-- [React Router](https://sass-lang.com/)
-- [Yup](https://sass-lang.com/)
 
 ## Getting Started
 
@@ -62,7 +63,8 @@ npm run start
 
 ## Contact
 
-[My LinkedIn page](https://www.linkedin.com/in/lisa-anker-rasch-strom/)
+[My LinkedIn page](https://www.linkedin.com/in/lisa-anker-rasch-strom/)  
+[Instagram](https://www.instagram.com/x.itoh)  
 
 
 
